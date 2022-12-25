@@ -59,6 +59,10 @@ class MainCanvas(context: Context) : SurfaceView(context) {
                 selectedFigure = Rectangle(event.x, event.y)
                 selectedFigure?.draw(canvas)
             }
+            FigureType.CUBE -> {
+                selectedFigure = Cube(event.x, event.y)
+                selectedFigure?.draw(canvas)
+            }
             FigureType.ELLIPSE -> {
                 selectedFigure = Ellipse(event.x, event.y)
                 selectedFigure?.draw(canvas)

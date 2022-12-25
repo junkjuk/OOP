@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                 val selectedFigureType = when(index) {
                     FigureType.POINT.index -> FigureType.POINT
                     FigureType.LINE.index -> FigureType.LineOO
-                    FigureType.RECTANGLE.index -> FigureType.RECTANGLE
+                    FigureType.RECTANGLE.index -> FigureType.CUBE
                     FigureType.ELLIPSE.index -> FigureType.ELLIPSE
                     else -> FigureType.POINT
                 }
@@ -67,6 +67,10 @@ class MainActivity : AppCompatActivity() {
             if (figureType == FigureType.RECTANGLE) getColor(R.color.selected)
             else Color.TRANSPARENT)
 
+        binding.rectBtn.setBackgroundColor(
+            if (figureType == FigureType.CUBE) getColor(R.color.selected)
+            else Color.TRANSPARENT)
+
         binding.ellipseBtn.setBackgroundColor(
             if (figureType == FigureType.ELLIPSE) getColor(R.color.selected)
             else Color.TRANSPARENT)
@@ -85,8 +89,8 @@ class MainActivity : AppCompatActivity() {
         }
         binding.rectBtn.setOnClickListener {
             binding.spinner.setSelection(2)
-            highlightSelectedFigure(FigureType.RECTANGLE)
-            mainCanvas.setDrawingFigure(FigureType.RECTANGLE)
+            highlightSelectedFigure(FigureType.CUBE)
+            mainCanvas.setDrawingFigure(FigureType.CUBE)
         }
         binding.ellipseBtn.setOnClickListener {
             binding.spinner.setSelection(3)

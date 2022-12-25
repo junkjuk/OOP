@@ -5,10 +5,10 @@ import android.graphics.Color
 import android.graphics.Paint
 import kotlin.math.abs
 
-class Rectangle(private val startX: Float, private val startY: Float): Shape() {
+open class Rectangle(protected val startX: Float, protected val startY: Float): Shape() {
 
-    private var endX = startX
-    private var endY = startY
+    protected var endX = startX
+    protected var endY = startY
 
     init {
         paint.style = Paint.Style.STROKE
