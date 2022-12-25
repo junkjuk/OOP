@@ -5,4 +5,5 @@ enum class FigureType (val index: Int){
     LINE(1),
     RECTANGLE(2),
     ELLIPSE(3),
+    LineOO(4),
 }

@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, index: Int, id: Long) {
                 val selectedFigureType = when(index) {
                     FigureType.POINT.index -> FigureType.POINT
-                    FigureType.LINE.index -> FigureType.LINE
+                    FigureType.LINE.index -> FigureType.LineOO
                     FigureType.RECTANGLE.index -> FigureType.RECTANGLE
                     FigureType.ELLIPSE.index -> FigureType.ELLIPSE
                     else -> FigureType.POINT
@@ -59,6 +59,10 @@ class MainActivity : AppCompatActivity() {
             if (figureType == FigureType.LINE) getColor(R.color.selected)
             else Color.TRANSPARENT)
 
+        binding.lineBtn.setBackgroundColor(
+            if (figureType == FigureType.LineOO) getColor(R.color.selected)
+            else Color.TRANSPARENT)
+
         binding.rectBtn.setBackgroundColor(
             if (figureType == FigureType.RECTANGLE) getColor(R.color.selected)
             else Color.TRANSPARENT)
@@ -76,8 +80,8 @@ class MainActivity : AppCompatActivity() {
         }
         binding.lineBtn.setOnClickListener {
             binding.spinner.setSelection(1)
-            highlightSelectedFigure(FigureType.LINE)
-            mainCanvas.setDrawingFigure(FigureType.LINE)
+            highlightSelectedFigure(FigureType.LineOO)
+            mainCanvas.setDrawingFigure(FigureType.LineOO)
         }
         binding.rectBtn.setOnClickListener {
             binding.spinner.setSelection(2)

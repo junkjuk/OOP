@@ -51,6 +51,10 @@ class MainCanvas(context: Context) : SurfaceView(context) {
                 selectedFigure = Line(event.x, event.y)
                 selectedFigure?.draw(canvas)
             }
+            FigureType.LineOO -> {
+                selectedFigure = LineOO(event.x, event.y)
+                selectedFigure?.draw(canvas)
+            }
             FigureType.RECTANGLE -> {
                 selectedFigure = Rectangle(event.x, event.y)
                 selectedFigure?.draw(canvas)

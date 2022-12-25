@@ -4,10 +4,10 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 
-class Line(private val startX: Float, private val startY: Float) : Shape() {
+open class Line(protected val startX: Float, protected val startY: Float) : Shape() {
 
-    private var endX = startX
-    private var endY = startY
+    protected var endX = startX
+    protected var endY = startY
 
     init {
         paint.color = Color.BLACK
