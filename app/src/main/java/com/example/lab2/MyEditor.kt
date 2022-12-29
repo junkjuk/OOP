@@ -1,5 +1,6 @@
 package com.example.lab2
 
+import android.graphics.Color
 import com.example.lab2.figures.Shape
 
 object MyEditor {
@@ -9,7 +10,10 @@ object MyEditor {
             field = value
             figures.forEachIndexed { i, shape ->
                 run {
-                    shape.isSelected = value == i
+                    if(value == i)
+                        shape.paint.color = Color.CYAN
+                    else
+                        shape.paint.color = Color.BLACK
                 }
             }
         }
