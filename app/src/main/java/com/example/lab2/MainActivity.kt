@@ -38,9 +38,11 @@ class MainActivity : AppCompatActivity() {
             override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, index: Int, id: Long) {
                 val selectedFigureType = when(index) {
                     FigureType.POINT.index -> FigureType.POINT
-                    FigureType.LINE.index -> FigureType.LineOO
-                    FigureType.RECTANGLE.index -> FigureType.CUBE
+                    FigureType.LINE.index -> FigureType.LINE
+                    FigureType.RECTANGLE.index -> FigureType.RECTANGLE
                     FigureType.ELLIPSE.index -> FigureType.ELLIPSE
+                    FigureType.LineOO.index -> FigureType.LineOO
+                    FigureType.CUBE.index -> FigureType.CUBE
                     else -> FigureType.POINT
                 }
                 highlightSelectedFigure(selectedFigureType)
@@ -59,20 +61,20 @@ class MainActivity : AppCompatActivity() {
             if (figureType == FigureType.LINE) getColor(R.color.selected)
             else Color.TRANSPARENT)
 
-        binding.lineBtn.setBackgroundColor(
-            if (figureType == FigureType.LineOO) getColor(R.color.selected)
-            else Color.TRANSPARENT)
-
         binding.rectBtn.setBackgroundColor(
             if (figureType == FigureType.RECTANGLE) getColor(R.color.selected)
             else Color.TRANSPARENT)
 
-        binding.rectBtn.setBackgroundColor(
-            if (figureType == FigureType.CUBE) getColor(R.color.selected)
-            else Color.TRANSPARENT)
-
         binding.ellipseBtn.setBackgroundColor(
             if (figureType == FigureType.ELLIPSE) getColor(R.color.selected)
+            else Color.TRANSPARENT)
+
+        binding.lineOOBtn.setBackgroundColor(
+            if (figureType == FigureType.LineOO) getColor(R.color.selected)
+            else Color.TRANSPARENT)
+
+        binding.cubeBtn.setBackgroundColor(
+            if (figureType == FigureType.CUBE) getColor(R.color.selected)
             else Color.TRANSPARENT)
     }
 
@@ -84,18 +86,28 @@ class MainActivity : AppCompatActivity() {
         }
         binding.lineBtn.setOnClickListener {
             binding.spinner.setSelection(1)
-            highlightSelectedFigure(FigureType.LineOO)
-            mainCanvas.setDrawingFigure(FigureType.LineOO)
+            highlightSelectedFigure(FigureType.LINE)
+            mainCanvas.setDrawingFigure(FigureType.LINE)
         }
         binding.rectBtn.setOnClickListener {
             binding.spinner.setSelection(2)
-            highlightSelectedFigure(FigureType.CUBE)
-            mainCanvas.setDrawingFigure(FigureType.CUBE)
+            highlightSelectedFigure(FigureType.RECTANGLE)
+            mainCanvas.setDrawingFigure(FigureType.RECTANGLE)
         }
         binding.ellipseBtn.setOnClickListener {
             binding.spinner.setSelection(3)
             highlightSelectedFigure(FigureType.ELLIPSE)
             mainCanvas.setDrawingFigure(FigureType.ELLIPSE)
+        }
+        binding.lineOOBtn.setOnClickListener {
+            binding.spinner.setSelection(4)
+            highlightSelectedFigure(FigureType.LineOO)
+            mainCanvas.setDrawingFigure(FigureType.LineOO)
+        }
+        binding.cubeBtn.setOnClickListener {
+            binding.spinner.setSelection(5)
+            highlightSelectedFigure(FigureType.CUBE)
+            mainCanvas.setDrawingFigure(FigureType.CUBE)
         }
     }
 }

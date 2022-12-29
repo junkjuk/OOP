@@ -10,9 +10,9 @@ abstract class Shape {
     val bordersPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     protected var paint = Paint(Paint.ANTI_ALIAS_FLAG)
     init {
-        bordersPaint.color = Color.BLUE
+        bordersPaint.color = Color.RED
         bordersPaint.style = Paint.Style.STROKE
-        bordersPaint.pathEffect = PathEffect()
+        bordersPaint.pathEffect = DashPathEffect(floatArrayOf(30f, 20f), 0F)
         bordersPaint.strokeWidth = strokeWidth
     }
 

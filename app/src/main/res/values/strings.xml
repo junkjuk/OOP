@@ -5,5 +5,7 @@
         <item>line</item>
         <item>rectangle</item>
         <item>ellipse</item>
+        <item>O--O</item>
+        <item>cube</item>
     </string-array>
 </resources>
