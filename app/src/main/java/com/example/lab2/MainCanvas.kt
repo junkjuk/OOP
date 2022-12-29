@@ -16,10 +16,10 @@ class MainCanvas(context: Context) : SurfaceView(context) {
         selectedFigureType = figure
     }
 
-    private val figures = mutableListOf<Shape>()
+    private var myEditor: MyEditor = MyEditor
     private fun drawPreviousFigures(canvas: Canvas) {
         canvas.drawColor(Color.WHITE)
-        for(figure in figures) { figure.draw(canvas) }
+        for(figure in myEditor.figures) { figure.draw(canvas) }
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -78,7 +78,7 @@ class MainCanvas(context: Context) : SurfaceView(context) {
     private fun onActionUp(canvas: Canvas) {
         selectedFigure?.let {
             it.draw(canvas)
-            figures.add(it)
+            myEditor.figures.add(it)
         }
         selectedFigure = null
     }

@@ -6,7 +6,7 @@ import android.graphics.*
 abstract class Shape {
 
     protected val strokeWidth = 14f
-
+    var isSelected = false
     val bordersPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     protected var paint = Paint(Paint.ANTI_ALIAS_FLAG)
     init {
