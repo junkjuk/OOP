@@ -11,6 +11,14 @@ class CsvParser {
         return figures
     }
 
+    fun getCsvStr(figures: MutableList<Shape>): String {
+        var csvStr = ""
+        for (shape in figures) {
+            csvStr += shape.buildCsvStr()
+        }
+        return csvStr
+    }
+
     private fun getFigureFromLine(line: String): Shape {
         val elements = line.split(",")
         val type = FigureType.valueOf(elements[0])
@@ -18,8 +26,8 @@ class CsvParser {
 
         val startX = elements[1].toFloat()
         val startY = elements[2].toFloat()
-        val endX = if (elements[3] != null) elements[3].toFloat() else 0f
-        val endY = if (elements[4] != null) elements[4].toFloat() else 0f
+        val endX = if (elements.getOrNull(3) != null) elements[3].toFloat() else 0f
+        val endY = if (elements.getOrNull(4) != null) elements[4].toFloat() else 0f
 
         when (type) {
             FigureType.POINT -> {
