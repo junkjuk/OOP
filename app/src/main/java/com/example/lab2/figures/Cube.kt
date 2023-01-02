@@ -47,4 +47,15 @@ class Cube(startX: Float, startY: Float): Rectangle(startX, startY){
         line4?.draw(canvas)
         canvas.drawRect(startX, startY, endX, endY, paint)
     }
+
+    override fun setCords(startx: Float, starty: Float, endx: Float, endy: Float) {
+        startX = startx
+        startY = starty
+        endX = endx
+        endY = endy
+    }
+
+    override fun buildCsvStr() : String{
+        return "Cube, $startX, $startY, $endX, $endY\n"
+    }
 }

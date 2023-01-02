@@ -21,4 +21,12 @@ class Point(private var x: Float, private var y: Float) : Shape() {
     }
 
     override fun drawShadow(canvas: Canvas) {}
+
+    override fun setCords(startx: Float, starty: Float, endx: Float, endy: Float) {
+        x = startx
+        y = starty
+    }
+    override fun buildCsvStr() : String{
+        return "Point, $x, $y\n"
+    }
 }

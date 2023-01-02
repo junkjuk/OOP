@@ -5,7 +5,7 @@ import android.graphics.Color
 import android.graphics.Paint
 import kotlin.math.abs
 
-open class Rectangle(protected val startX: Float, protected val startY: Float): Shape() {
+open class Rectangle(protected var startX: Float, protected var startY: Float): Shape() {
 
     protected var endX = startX
     protected var endY = startY
@@ -27,5 +27,16 @@ open class Rectangle(protected val startX: Float, protected val startY: Float): 
 
     override fun drawShadow(canvas: Canvas) {
         canvas.drawRect(startX, startY, endX, endY, bordersPaint)
+    }
+
+    override fun setCords(startx: Float, starty: Float, endx: Float, endy: Float) {
+        startX = startx
+        startY = starty
+        endX = endx
+        endY = endy
+    }
+
+    override fun buildCsvStr() : String{
+        return "Rectangle, $startX, $startY, $endX, $endY\n"
     }
 }

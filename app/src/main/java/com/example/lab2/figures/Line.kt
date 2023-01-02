@@ -33,4 +33,15 @@ open class Line(protected var startX: Float, protected var startY: Float) : Shap
     override fun drawShadow(canvas: Canvas) {
         canvas.drawLine(startX, startY, endX, endY, bordersPaint)
     }
+
+    override fun setCords(startx: Float, starty: Float, endx: Float, endy: Float) {
+        startX = startx
+        startY = starty
+        endX = endx
+        endY = endy
+    }
+
+    override fun buildCsvStr() : String{
+        return "Line, $startX, $startY, $endX, $endY\n"
+    }
 }

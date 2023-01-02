@@ -32,4 +32,15 @@ class LineOO(startX: Float, startY: Float) : Line(startX, startY) {
         EndEllipse?.move(endX + 50, endY + 50)
         EndEllipse?.drawShadow(canvas)
     }
+
+    override fun setCords(startx: Float, starty: Float, endx: Float, endy: Float) {
+        startX = startx
+        startY = starty
+        endX = endx
+        endY = endy
+    }
+
+    override fun buildCsvStr() : String{
+        return "LineOO, $startX, $startY, $endX, $endY\n"
+    }
 }

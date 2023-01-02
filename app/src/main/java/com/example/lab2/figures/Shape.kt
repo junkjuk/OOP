@@ -21,4 +21,8 @@ abstract class Shape {
     abstract fun draw(canvas: Canvas)
 
     abstract fun drawShadow(canvas: Canvas)
+
+    abstract fun setCords(startx: Float, starty: Float, endx: Float, endy: Float)
+
+    abstract fun buildCsvStr() : String
 }

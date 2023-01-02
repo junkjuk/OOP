@@ -40,4 +40,16 @@ class Ellipse(private val centerX: Float, private val centerY: Float): Shape() {
     override fun drawShadow(canvas: Canvas) {
         canvas.drawOval(startX, startY, endX, endY, bordersPaint)
     }
+
+    override fun setCords(startx: Float, starty: Float, endx: Float, endy: Float) {
+        startX = startx
+        startY = starty
+        endX = endx
+        endY = endy
+    }
+
+    override fun buildCsvStr() : String{
+        return "Ellipse, $startX, $startY, $endX, $endY\n"
+    }
+
 }
