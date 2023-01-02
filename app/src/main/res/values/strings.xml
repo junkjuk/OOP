@@ -1,11 +1,10 @@
 <resources>
-    <string name="app_name">Lab2</string>
-    <string-array name="figures">
-        <item>point</item>
-        <item>line</item>
-        <item>rectangle</item>
-        <item>ellipse</item>
-        <item>O--O</item>
-        <item>cube</item>
-    </string-array>
+    <string name="app_name">Lab5</string>
+    <string name="point">point</string>
+    <string name="line">line</string>
+    <string name="rect">rectangle</string>
+    <string name="ellipse">ellipse</string>
+    <string name="dumbbell">dumbbell</string>
+    <string name="cube">cube</string>
+    <string name="show_hide_table">show/hide table</string>
 </resources>
